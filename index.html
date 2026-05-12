@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diwi Labs</title>
+  <meta name="description" content="Diwi Labs is an independent software studio building consumer apps for iOS, macOS, and the web.">
+  <title>Diwi Labs — Independent Software Studio</title>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -73,11 +74,20 @@
       margin-bottom: 2.5rem;
     }
 
+    .project {
+      margin-bottom: 1.25rem;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
     .project-link {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      font-size: 0.9375rem;
+      font-size: 1rem;
+      font-weight: 500;
       color: #111;
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -86,6 +96,21 @@
 
     .project-link:hover {
       text-decoration-color: #111;
+    }
+
+    .project-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: #555;
+      margin-top: 0.35rem;
+    }
+
+    .about {
+      margin-bottom: 2.5rem;
+    }
+
+    .about p + p {
+      margin-top: 1rem;
     }
 
     footer {
@@ -102,15 +127,36 @@
 <body>
   <main>
     <h1>Diwi Labs</h1>
-    <p class="body-text">Building software.</p>
+    <p class="body-text">An independent software studio building consumer apps for iOS, macOS, and the web.</p>
+
+    <div class="about">
+      <p class="section-label">About</p>
+      <p class="body-text" style="margin-bottom: 0;">
+        Diwi Labs is a small, independent studio focused on shipping thoughtful, well-crafted software.
+        We design and build our own products end to end, from the underlying infrastructure to the
+        interface in your hands. Our work spans audio, media, and everyday utilities, with an emphasis
+        on simple, durable tools that respect the people who use them.
+      </p>
+    </div>
+
     <div class="projects">
       <p class="section-label">Projects</p>
-      <a class="project-link" href="https://justaudio.stream" target="_blank" rel="noopener">justaudio.stream</a>
+      <div class="project">
+        <a class="project-link" href="https://justaudio.stream" target="_blank" rel="noopener">justaudio.stream</a>
+        <p class="project-desc">Audio-only livestream recordings designed for background listening.</p>
+      </div>
     </div>
-    <p class="contact">Contact: <a href="mailto:ask@diwilabs.com">ask@diwilabs.com</a></p>
+
+    <div class="about">
+      <p class="section-label">Contact</p>
+      <p class="contact">
+        General inquiries: <a href="mailto:ask@diwilabs.com">ask@diwilabs.com</a><br>
+        Privacy: <a href="/privacy/">Privacy Policy</a>
+      </p>
+    </div>
   </main>
   <footer>
-    <span>© 2026 Diwi Labs LLC</span>
+    <span>© 2026 Diwi Labs LLC &middot; Registered in Illinois, USA</span>
   </footer>
 </body>
 </html>
