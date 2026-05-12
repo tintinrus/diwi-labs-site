@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diwi Labs is an independent software studio building consumer apps for iOS, macOS, and the web.">
   <title>Diwi Labs — Independent Software Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Playpen+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -12,10 +15,25 @@
       padding: 0;
     }
 
+    ::selection {
+      background-color: rgba(255, 245, 0, 0.5);
+      color: inherit;
+    }
+
+    ::-moz-selection {
+      background-color: rgba(255, 245, 0, 0.5);
+      color: inherit;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #111;
+      font-family: 'Playpen Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      background-image:
+        linear-gradient(to right, #cfe2f3 1px, transparent 1px),
+        linear-gradient(to bottom, #cfe2f3 1px, transparent 1px);
+      background-size: 24px 24px;
+      background-position: calc(50% - 328px) -3px;
+      color: #2f3438;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -24,58 +42,77 @@
 
     main {
       flex: 1;
-      max-width: 640px;
+      max-width: 624px;
       width: 100%;
       margin: 0 auto;
-      padding: 5rem 0 3rem;
+      padding: 4.5rem 0 3rem;
     }
 
     h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      color: #111;
-      margin-bottom: 2.5rem;
+      font-family: 'Carter One', 'Playpen Sans', serif;
+      font-size: 2.25rem;
+      line-height: 3rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: #2f3438;
+      margin: 0 0 3rem;
+      transform: translateY(3px);
     }
 
     .body-text {
       font-size: 1rem;
-      line-height: 1.75;
-      color: #444;
-      margin-bottom: 2.5rem;
+      line-height: 1.5rem;
+      color: #4a5056;
+      margin: 0 0 3rem;
     }
 
     .contact {
-      font-size: 0.9375rem;
-      color: #555;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #5c6168;
     }
 
     .contact a {
-      color: #111;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: #bbb;
+      position: relative;
+      color: #2f3438;
+      text-decoration: none;
+      padding: 0 0.2rem;
     }
 
-    .contact a:hover {
-      text-decoration-color: #111;
+    .contact a::before {
+      content: '';
+      position: absolute;
+      left: -0.05rem;
+      right: -0.05rem;
+      top: 18%;
+      bottom: 8%;
+      background-color: rgba(0, 255, 255, 0.95);
+      mix-blend-mode: multiply;
+      z-index: -1;
+      border-radius: 1px;
+      transition: background-color 0.2s;
+    }
+
+    .contact a:hover::before {
+      background-color: rgba(0, 240, 255, 1);
     }
 
     .section-label {
       font-size: 0.75rem;
+      line-height: 1.5rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #999;
-      margin-bottom: 1rem;
+      color: #8a9098;
+      margin: 0 0 1.5rem;
     }
 
     .projects {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .project {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .project:last-child {
@@ -83,44 +120,149 @@
     }
 
     .project-link {
+      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       font-size: 1rem;
+      line-height: 1.5rem;
       font-weight: 500;
-      color: #111;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: #bbb;
+      color: #2f3438;
+      text-decoration: none;
+      padding: 0 0.2rem;
     }
 
-    .project-link:hover {
-      text-decoration-color: #111;
+    .project-link::before {
+      content: '';
+      position: absolute;
+      left: -0.05rem;
+      right: -0.05rem;
+      top: 18%;
+      bottom: 8%;
+      background-color: rgba(255, 30, 220, 0.75);
+      z-index: -1;
+      border-radius: 1px;
+      transition: background-color 0.2s;
+    }
+
+    .project-link:hover::before {
+      background-color: rgba(255, 10, 200, 0.85);
     }
 
     .project-desc {
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: #555;
-      margin-top: 0.35rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #5c6168;
+      margin: 0;
+    }
+
+    .project-tag {
+      font-size: 0.85rem;
+      line-height: 1.5rem;
+      color: #5c6168;
+      margin-left: 0.5rem;
+    }
+
+    .phone-frame {
+      position: relative;
+      width: 252px;
+      height: 528px;
+      margin: 1.5rem auto 0;
+      padding: 9px;
+      background: #ffffff;
+      border: 1.5px solid #4a5056;
+      border-radius: 38px;
+      box-sizing: border-box;
+      box-shadow:
+        0 2px 4px rgba(47, 52, 56, 0.08),
+        0 8px 16px rgba(47, 52, 56, 0.12),
+        0 20px 32px rgba(47, 52, 56, 0.10);
+    }
+
+    .phone-screen {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      height: 16px;
+      background: #2f3438;
+      border-radius: 8px;
+      z-index: 2;
+    }
+
+    .phone-frame::before,
+    .phone-frame::after {
+      content: '';
+      position: absolute;
+      background: #4a5056;
+      border-radius: 2px;
+    }
+
+    .phone-frame::before {
+      left: -2.5px;
+      top: 25%;
+      width: 2px;
+      height: 36px;
+      box-shadow: 0 50px 0 #4a5056, 0 100px 0 #4a5056;
+    }
+
+    .phone-frame::after {
+      right: -2.5px;
+      top: 30%;
+      width: 2px;
+      height: 60px;
     }
 
     .about {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .about p + p {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     footer {
-      max-width: 640px;
+      max-width: 624px;
       width: 100%;
       margin: 0 auto;
-      padding: 1.75rem 0;
-      border-top: 1px solid #e8e8e8;
+      padding: 1.5rem 0;
       font-size: 0.875rem;
-      color: #999;
+      line-height: 1.5rem;
+      color: #8a9098;
+    }
+
+    footer a {
+      position: relative;
+      color: #2f3438;
+      text-decoration: none;
+      padding: 0 0.2rem;
+    }
+
+    footer a::before {
+      content: '';
+      position: absolute;
+      left: -0.05rem;
+      right: -0.05rem;
+      top: 18%;
+      bottom: 8%;
+      background-color: rgba(0, 255, 80, 0.95);
+      mix-blend-mode: multiply;
+      z-index: -1;
+      border-radius: 1px;
+      transition: background-color 0.2s;
+    }
+
+    footer a:hover::before {
+      background-color: rgba(0, 240, 50, 1);
     }
   </style>
 </head>
@@ -139,21 +281,24 @@
     <div class="projects">
       <p class="section-label">Projects</p>
       <div class="project">
-        <a class="project-link" href="https://justaudio.stream" target="_blank" rel="noopener">justaudio.stream</a>
+        <a class="project-link" href="https://justaudio.stream" target="_blank" rel="noopener">justaudio.stream</a><span class="project-tag">iOS coming soon!</span>
         <p class="project-desc">Audio-only livestream recordings designed for background listening.</p>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img class="phone-screen" src="justaudio-ios.png" alt="JustAudio iOS app screenshot">
+        </div>
       </div>
     </div>
 
     <div class="about">
       <p class="section-label">Contact</p>
       <p class="contact">
-        General inquiries: <a href="mailto:ask@diwilabs.com">ask@diwilabs.com</a><br>
-        Privacy: <a href="/privacy/">Privacy Policy</a>
+        General inquiries: <a href="mailto:ask@diwilabs.com">ask@diwilabs.com</a>
       </p>
     </div>
   </main>
   <footer>
-    <span>© 2026 Diwi Labs LLC &middot; Registered in Illinois, USA</span>
+    <span>© 2026 Diwi Labs LLC &middot; Registered in Illinois, USA &middot; <a href="/privacy/">Privacy Policy</a></span>
   </footer>
 </body>
 </html>
